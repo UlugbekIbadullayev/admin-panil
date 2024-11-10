@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '1.css' %}">
+</head>
+<body>
+    <div class="midil">
+            {% for i in Telifon %}
+            <div class="box">
+            <a href="{% url 'a' id=i.id %}">
+              <img src="{{ i.rasim.url }}" alt="">
+              <h2>{{i.nomi}}</h2>
+              <h3>{{i.narx}}</h3>
+              <h6>{{i.vaqt}}</h6>
+            </a>
+            </div>
+            {% endfor %}
+    </div>
+</body>
+</html>
